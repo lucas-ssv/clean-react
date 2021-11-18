@@ -5,6 +5,7 @@
   "author": "lucas-ssv <lucas_99silva@hotmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@types/jest": "^27.0.2",
     "@types/node": "^16.11.7",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "eslint": "^8.2.0",
@@ -15,7 +16,9 @@
     "eslint-plugin-standard": "^5.0.0",
     "git-commit-msg-linter": "^3.2.8",
     "husky": "^7.0.4",
+    "jest": "^27.3.1",
     "lint-staged": "^12.0.2",
+    "ts-jest": "^27.0.7",
     "typescript": "^4.5.2"
   }
 }
