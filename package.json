@@ -35,5 +35,8 @@
       "eslint 'src/**' --fix",
       "yarn test:staged"
     ]
+  },
+  "dependencies": {
+    "axios": "^0.24.0"
   }
 }
