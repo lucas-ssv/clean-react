@@ -1,0 +1,6 @@
+export { Footer } from './Footer/Footer'
+export { FormStatus } from './Form-status/Form-status'
+export { Input } from './Input/Input'
+export { LoginHeader as Header } from './Login-header/Login-header'
+export { Logo } from './Logo/Logo'
+export { Spinner } from './Spinner/Spinner'
