@@ -1,0 +1,16 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--primary);
+  border-top: 2.5rem solid var(--primary-dark);
+
+  img {
+    margin-top: 2.5rem;
+  }
+
+  h1 {
+    color: var(--white);
+    margin: 1rem 0 2.5rem;
+  }
+}
