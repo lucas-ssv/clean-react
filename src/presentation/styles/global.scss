@@ -1,0 +1,47 @@
+* {
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.875rem;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background);
+}
+
+:root {
+  --white: #FFF;
+  --black: #000;
+  --background: #F2F2F2;
+  --primary: #880E4F;
+  --primary-dark: #560027;
+  --primary-light: #BC477B;
+}
+
+input[type="password"],
+input[type="email"] {
+  border: 1px solid var(--primary-light);
+  line-height: 2.5rem;
+  border-radius: 0.25rem;
+  padding: 0 2.5rem 0 0.5rem;
+
+  &:focus {
+    outline-color: var(--primary-light);
+  }
+}
+
+button {
+  background: var(--primary);
+  color: var(--white);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  line-height: 3.75rem;
+  border: 0;
+  cursor: pointer;
+  transition: filter 0.2s;
+
+  &:hover {
+    filter: brightness(0.9);
+  }
+}
