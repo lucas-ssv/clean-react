@@ -132,7 +132,6 @@ describe('Login component', () => {
     })
     const submitButton = sut.getByTestId('submit')
     fireEvent.click(submitButton)
-    const spinner = sut.getByTestId('spinner')
     expect(authenticationSpy.params).toEqual({
       email,
       password
