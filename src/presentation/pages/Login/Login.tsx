@@ -1,5 +1,5 @@
 import React, { FormEvent, useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { Header, Input, FormStatus, Footer } from '@/presentation/components'
 import { FormContext } from '@/presentation/contexts/Form/form-context'
 import Styles from './login-styles.scss'
@@ -12,6 +12,7 @@ type Props = {
 }
 
 export const Login: React.FC<Props> = ({ validation, authentication }: Props) => {
+  const history = useNavigate()
   const [state, setState] = useState({
     isLoading: false,
     email: '',
@@ -41,6 +42,7 @@ export const Login: React.FC<Props> = ({ validation, authentication }: Props) =>
       })
 
       localStorage.setItem('accessToken', account.accessToken)
+      history('/')
     } catch (error) {
       setState({ ...state, isLoading: false, mainError: error.message })
     }
