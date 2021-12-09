@@ -4,7 +4,7 @@ import { Router } from 'react-router'
 import { createMemoryHistory } from 'history'
 import 'jest-localstorage-mock'
 import { Login } from '@/presentation/pages'
-import { AuthenticationSpy, ValidationStub } from '@/presentation/test'
+import { AuthenticationSpy, ValidationMock } from '@/presentation/test'
 import { render, RenderResult, fireEvent, cleanup, waitFor } from '@testing-library/react'
 import { InvalidCredentialsError } from '@/domain/errors'
 
@@ -20,12 +20,12 @@ type SutParams = {
 const history = createMemoryHistory({ initialEntries: ['/login'] })
 
 const makeSut = (params?: SutParams): SutTypes => {
-  const validationStub = new ValidationStub()
+  const validationMock = new ValidationMock()
   const authenticationSpy = new AuthenticationSpy()
-  validationStub.errorMessage = params?.validationError
+  validationMock.errorMessage = params?.validationError
   const sut = render(
     <Router navigator={history} navigationType={history.action} location={history.location}>
-      <Login validation={validationStub} authentication={authenticationSpy} />
+      <Login validation={validationMock} authentication={authenticationSpy} />
     </Router>
   )
   return {
