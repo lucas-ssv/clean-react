@@ -1,6 +1,6 @@
 import { Validation } from '../protocols/validation'
 
-export class ValidationMock implements Validation {
+export class ValidationStub implements Validation {
   errorMessage: string
 
   validate (): string {
