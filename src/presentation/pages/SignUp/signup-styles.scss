@@ -1,0 +1,51 @@
+.signup {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .form {
+    width: 400px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: var(--white);
+    border-radius: 0.5rem;
+    align-self: center;
+    box-shadow: 0 1px 3px -1px var(--black);
+    padding: 2.5rem;
+
+    h2 {
+      font-size: 1.25rem;
+      color: var(--primary-dark);
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .submit {
+      margin-top: 2rem;
+
+      &:disabled {
+        background: var(--disabled-background);
+        color: var(--disabled-color);
+
+        &:hover {
+          filter: none;
+          cursor: not-allowed;
+        }
+      }
+    }
+
+    .link {
+      text-align: center;
+      color: var(--primary);
+      text-transform: lowercase;
+      margin-top: 1rem;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

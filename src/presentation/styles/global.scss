@@ -22,7 +22,8 @@ body {
 }
 
 input[type="password"],
-input[type="email"] {
+input[type="email"],
+input[type="text"] {
   border: 1px solid var(--primary-light);
   line-height: 2.5rem;
   border-radius: 0.25rem;
