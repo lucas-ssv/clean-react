@@ -77,7 +77,7 @@ export const SignUp: React.FC<Props> = ({ validation, addAccount, saveAccessToke
           >
             Entrar
           </button>
-          <span className={Styles.link}>Voltar para login</span>
+          <Link data-testid="login-link" to="/login" className={Styles.link}>Voltar para login</Link>
           <FormStatus />
         </form>
       </FormContext.Provider>
