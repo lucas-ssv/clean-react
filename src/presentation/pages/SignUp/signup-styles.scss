@@ -22,18 +22,8 @@
       text-transform: uppercase;
     }
 
-    .submit {
+    button {
       margin-top: 2rem;
-
-      &:disabled {
-        background: var(--disabled-background);
-        color: var(--disabled-color);
-
-        &:hover {
-          filter: none;
-          cursor: not-allowed;
-        }
-      }
     }
 
     .link {

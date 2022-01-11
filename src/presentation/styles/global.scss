@@ -44,6 +44,16 @@ button {
   cursor: pointer;
   transition: filter 0.2s;
 
+  &:disabled {
+    background: var(--disabled-background);
+    color: var(--disabled-color);
+
+    &:hover {
+      filter: none;
+      cursor: not-allowed;
+    }
+  }
+
   &:hover {
     filter: brightness(0.9);
   }
