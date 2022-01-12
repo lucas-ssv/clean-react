@@ -24,14 +24,8 @@ body {
 input[type="password"],
 input[type="email"],
 input[type="text"] {
-  border: 1px solid var(--primary-light);
-  line-height: 2.5rem;
-  border-radius: 0.25rem;
-  padding: 0 2.5rem 0 0.5rem;
-
-  &:focus {
-    outline-color: var(--primary-light);
-  }
+  border: none;
+  outline: none;
 }
 
 button {
@@ -39,7 +33,7 @@ button {
   color: var(--white);
   border-radius: 0.5rem;
   font-size: 1rem;
-  line-height: 3.75rem;
+  line-height: 3.125rem;
   border: 0;
   cursor: pointer;
   transition: filter 0.2s;
