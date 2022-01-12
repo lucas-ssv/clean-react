@@ -15,6 +15,7 @@
     "prepare": "husky install"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.16.8",
     "@cypress/webpack-preprocessor": "^5.11.0",
     "@testing-library/react": "^12.1.2",
     "@types/faker": "^5.5.9",
@@ -24,6 +25,7 @@
     "@types/react-dom": "^17.0.11",
     "@types/react-router-dom": "^5.3.2",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "babel-loader": "^8.2.3",
     "clean-webpack-plugin": "^4.0.0",
     "coveralls": "^3.1.1",
     "css-loader": "^6.5.1",
