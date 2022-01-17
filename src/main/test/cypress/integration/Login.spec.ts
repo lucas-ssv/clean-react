@@ -33,13 +33,9 @@ describe('Login', () => {
 
   it('Should present valid state if form is valid', () => {
     cy.getByTestId('email').focus().type(faker.internet.email())
-    cy.getByTestId('email-wrap').should('have.attr', 'data-status', 'valid')
-    cy.getByTestId('email').should('not.have.attr', 'title')
-    cy.getByTestId('email-label').should('not.have.attr', 'title')
+    FormHelper.testInputStatus('email')
     cy.getByTestId('password').focus().type(faker.random.alphaNumeric(5))
-    cy.getByTestId('password-wrap').should('have.attr', 'data-status', 'valid')
-    cy.getByTestId('password').should('not.have.attr', 'title')
-    cy.getByTestId('password-label').should('not.have.attr', 'title')
+    FormHelper.testInputStatus('password')
     cy.getByTestId('submit').should('not.have.attr', 'disabled')
     cy.getByTestId('error-wrap').should('not.have.descendants')
   })
