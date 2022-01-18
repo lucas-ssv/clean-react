@@ -27,10 +27,14 @@ export class HttpPostClientSpy<R> implements HttpPostClient<R> {
   }
 }
 
-export class HttpGetClientMock implements HttpGetClient {
+export class HttpGetClientSpy<R> implements HttpGetClient {
   url: string
+  response: HttpResponse<R> = {
+    statusCode: HttpStatusCode.ok
+  }
 
-  async get (params: HttpGetParams): Promise<void> {
+  async get (params: HttpGetParams): Promise<HttpResponse<R>> {
     this.url = params.url
+    return this.response
   }
 }
