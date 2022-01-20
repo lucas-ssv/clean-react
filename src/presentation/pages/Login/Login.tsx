@@ -60,7 +60,7 @@ export const Login: React.FC<Props> = ({ validation, authentication, saveAccessT
   }
 
   return (
-    <div className={Styles.login}>
+    <div className={Styles.loginWrap}>
       <Header />
       <FormContext.Provider value={{ state, setState }}>
         <form data-testid="form" className={Styles.form} onSubmit={handleSubmit}>
