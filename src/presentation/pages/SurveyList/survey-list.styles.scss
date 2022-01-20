@@ -85,7 +85,6 @@
         flex-basis: 48%;
         margin-bottom: 1.5rem;
         box-shadow: 0 1px 3px -1px #000;
-        overflow: hidden;
 
         .surveyContent {
           display: flex;
@@ -98,6 +97,26 @@
           background-repeat: no-repeat;
           background-position: 0 0, 54 0;
           background-size: 54px 100%, 100% 100%;
+          border-radius: 0.5rem 0.5rem 0 0;
+          position: relative;
+
+          .iconWrap {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            padding: 0.625rem;
+            border-radius: 100%;
+            display: flex;
+            box-shadow: 0 1px 3px -1px var(--black);
+
+            &.red {
+              background: var(--invalid);
+            }
+
+            &.green {
+              background: var(--valid);
+            }
+          }
 
           time {
             width: 60px;
@@ -138,6 +157,7 @@
         footer {
           background: var(--primary);
           color: var(--white);
+          border-radius: 0 0 0.5rem 0.5rem;
           line-height: 2.5rem;
           text-transform: lowercase;
           text-align: center;
