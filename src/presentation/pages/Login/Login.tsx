@@ -1,6 +1,6 @@
 import React, { FormEvent, useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { Header, Input, FormStatus, Footer, SubmitButton } from '@/presentation/components'
+import { Input, FormStatus, Footer, SubmitButton, LoginHeader } from '@/presentation/components'
 import { FormContext } from '@/presentation/contexts/Form/form-context'
 import Styles from './login-styles.scss'
 import { Validation } from '@/presentation/protocols/validation'
@@ -61,7 +61,7 @@ export const Login: React.FC<Props> = ({ validation, authentication, saveAccessT
 
   return (
     <div className={Styles.loginWrap}>
-      <Header />
+      <LoginHeader />
       <FormContext.Provider value={{ state, setState }}>
         <form data-testid="form" className={Styles.form} onSubmit={handleSubmit}>
           <h2>Login</h2>
