@@ -1,0 +1,14 @@
+.iconWrap {
+  padding: 0.625rem;
+  border-radius: 100%;
+  display: flex;
+  box-shadow: 0 1px 3px -1px var(--black);
+
+  &.red {
+    background: var(--invalid);
+  }
+
+  &.green {
+    background: var(--valid);
+  }
+}

@@ -1,4 +1,5 @@
-import { Footer, Header } from '@/presentation/components'
+import { Footer, Header, Icon } from '@/presentation/components'
+import { IconName } from '@/presentation/components/Icon/Icon'
 import React from 'react'
 import Styles from './survey-list-styles.scss'
 
@@ -11,13 +12,7 @@ export const SurveyList: React.FC = () => {
         <ul>
           <li>
             <div className={Styles.surveyContent}>
-              <div className={`${Styles.iconWrap} ${Styles.green}`}>
-                <img
-                  className={Styles.icon}
-                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAYAAABb0P4QAAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAFKADAAQAAAABAAAAEgAAAAA9nQVdAAAA0klEQVQ4EWNgIAH8//+/AYhLSNCCWynUMCD1/zcQG+BWSYQMkmEgA0Egjght2JUANYO8iQ4MsasmIAo0BZthP4DirAS0YkrjMAzk0tOYqgmIADUVgnTiADPxakfStAWmECj2DkmcWOYjoEJPRpBqmEGMQABiI4vB5IikH1PbQAYmIm0mVtlLahu4nJpe/gf0hho1XbgVGKd3qWngRFBA4/LyX6AcKZZdBbpOB2QgLk1nQJIkgElwtaBEDAXIOUULKHYSiP/CJHHQX4Hic4CYBWYgADx8PyqFiuhJAAAAAElFTkSuQmCC"
-                  alt=""
-                />
-              </div>
+              <Icon className={Styles.iconWrap} iconName={IconName.thumbUp} />
               <time>
                 <span className={Styles.day}>10</span>
                 <span className={Styles.month}>05</span>
