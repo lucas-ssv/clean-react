@@ -1,6 +1,6 @@
 import { Footer, Header } from '@/presentation/components'
 import React from 'react'
-import Styles from './survey-list.styles.scss'
+import Styles from './survey-list-styles.scss'
 
 export const SurveyList: React.FC = () => {
   return (
