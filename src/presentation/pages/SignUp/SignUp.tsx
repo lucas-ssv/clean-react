@@ -1,18 +1,19 @@
-import React, { FormEvent, useEffect, useState } from 'react'
+import React, { FormEvent, useContext, useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { Input, FormStatus, Footer, SubmitButton, LoginHeader } from '@/presentation/components'
+import { ApiContext } from '@/presentation/contexts/Api/api-context'
 import { FormContext } from '@/presentation/contexts/Form/form-context'
 import Styles from './signup-styles.scss'
 import { Validation } from '@/presentation/protocols/validation'
-import { AddAccount, UpdateCurrentAccount } from '@/domain/usecases'
+import { AddAccount } from '@/domain/usecases'
 
 type Props = {
   validation: Validation
   addAccount: AddAccount
-  updateCurrentAccount: UpdateCurrentAccount
 }
 
-export const SignUp: React.FC<Props> = ({ validation, addAccount, updateCurrentAccount }: Props) => {
+export const SignUp: React.FC<Props> = ({ validation, addAccount }: Props) => {
+  const { setCurrentAccount } = useContext(ApiContext)
   const history = useNavigate()
   const [state, setState] = useState({
     isLoading: false,
@@ -62,7 +63,7 @@ export const SignUp: React.FC<Props> = ({ validation, addAccount, updateCurrentA
         password: state.password,
         passwordConfirmation: state.passwordConfirmation
       })
-      await updateCurrentAccount.save(account)
+      setCurrentAccount(account)
       history('/')
     } catch (error) {
       setState({
