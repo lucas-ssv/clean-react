@@ -14,7 +14,11 @@ export const Router: React.FC = () => {
         <Routes>
           <Route path="/login" element={<MakeLogin />} />
           <Route path="/signup" element={<MakeSignUp />} />
-          <Route path="/" element={<SurveyList />} />
+          <Route path="/" element={
+            <PrivateRoute>
+              <SurveyList />
+            </PrivateRoute>
+          } />
         </Routes>
       </BrowserRouter>
     </ApiContext.Provider>
