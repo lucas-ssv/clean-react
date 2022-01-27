@@ -3,7 +3,7 @@ import { Navigate } from 'react-router-dom'
 import { ApiContext } from '@/presentation/contexts/Api/api-context'
 
 type PrivateRouteProps = {
-  children?: ReactNode
+  children: ReactNode
 }
 
 export const PrivateRoute: React.FC<PrivateRouteProps> = ({ children }: PrivateRouteProps): any => {
