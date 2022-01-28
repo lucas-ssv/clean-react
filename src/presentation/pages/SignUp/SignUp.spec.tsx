@@ -5,9 +5,9 @@ import { AddAccountSpy, Helper, ValidationStub } from '@/presentation/test'
 import { ApiContext } from '@/presentation/contexts/Api/api-context'
 import { EmailInUseError } from '@/domain/errors'
 import { Router } from 'react-router-dom'
+import { AccountModel } from '@/domain/models'
 import { createMemoryHistory } from 'history'
 import faker from 'faker'
-import { AccountModel } from '@/domain/models'
 
 type SutTypes = {
   addAccountSpy: AddAccountSpy
