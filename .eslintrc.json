@@ -20,6 +20,7 @@
     "@typescript-eslint/require-await": "off",
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error",
-    "@typescript-eslint/no-unnecessary-type-assertion": "off"
+    "@typescript-eslint/no-unnecessary-type-assertion": "off",
+    "@typescript-eslint/no-floating-promises": "off"
   }
 }
