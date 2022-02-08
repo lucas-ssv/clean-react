@@ -3,7 +3,6 @@ import { Footer, Header } from '@/presentation/components'
 import { useErrorHandler } from '@/presentation/hooks'
 import { Error, List, SurveyContext } from './components'
 import Styles from './survey-list-styles.scss'
-import { useNavigate } from 'react-router-dom'
 import React, { useEffect, useState } from 'react'
 
 type Props = {
@@ -14,7 +13,6 @@ export const SurveyList: React.FC<Props> = ({ loadSurveyList }: Props) => {
   const handleError = useErrorHandler((error: Error) => {
     setState({ ...state, error: error.message })
   })
-  const history = useNavigate()
   const [state, setState] = useState({
     surveys: [] as LoadSurveyList.Model[],
     error: '',
