@@ -42,21 +42,21 @@ export const SignUp: React.FC<Props> = ({ validation, addAccount }: Props) => {
     const passwordError = validation.validate('password', formData)
     const passwordConfirmationError = validation.validate('passwordConfirmation', formData)
 
-    setState({
-      ...state,
+    setState(old => ({
+      ...old,
       nameError,
       emailError,
       passwordError,
       passwordConfirmationError,
       isFormInvalid: !!nameError || !!emailError || !!passwordError || !!passwordConfirmationError
-    })
+    }))
   }, [state.name, state.email, state.password, state.passwordConfirmation])
 
   const handleSubmit = async (event: FormEvent): Promise<void> => {
     event.preventDefault()
     try {
       if (state.isLoading || state.isFormInvalid) return
-      setState({ ...state, isLoading: true })
+      setState(old => ({ ...old, isLoading: true }))
       const account = await addAccount.add({
         name: state.name,
         email: state.email,
@@ -66,11 +66,11 @@ export const SignUp: React.FC<Props> = ({ validation, addAccount }: Props) => {
       setCurrentAccount(account)
       history('/')
     } catch (error) {
-      setState({
-        ...state,
+      setState(old => ({
+        ...old,
         isLoading: false,
         mainError: error.message
-      })
+      }))
     }
   }
 
