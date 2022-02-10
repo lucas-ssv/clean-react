@@ -3,5 +3,6 @@ node_modules/
 coverage/
 .husky/
 public/
+dist/
 *.scss
 *.json
