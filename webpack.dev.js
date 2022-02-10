@@ -30,7 +30,8 @@ module.exports = merge(common, {
       writeToDisk: true
     },
     static: './public',
-    historyApiFallback: true
+    historyApiFallback: true,
+    port: 8080
   },
   plugins: [
     new EnvironmentPlugin({

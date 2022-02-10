@@ -1,11 +1,21 @@
 language: node_js
 node_js:
   - 16
+addons:
+  packages:
+    - libgconf-2-4
+cache:
+  npm: true
+  directories:
+    - ~/.cache
 script:
   - yarn eslint 'src/**'
   - yarn test:coveralls
+  - yarn test:cypress:ci
 build:
   provider: heroku
   api_key: $HEROKU_API
   api: surveys-fordevs-react
   skip_cleanup: true
+notifications:
+  email: false
