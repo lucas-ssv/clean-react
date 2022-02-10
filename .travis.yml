@@ -4,3 +4,8 @@ node_js:
 script:
   - yarn eslint 'src/**'
   - yarn test:coveralls
+build:
+  provider: heroku
+  api_key: $HEROKU_API
+  api: surveys-fordevs-react
+  skip_cleanup: true
