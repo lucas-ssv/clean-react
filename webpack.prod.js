@@ -27,11 +27,12 @@ module.exports = merge(common, {
   },
   externals: {
     react: 'React',
+    axios: 'axios',
     'react-dom': 'ReactDOM'
   },
   plugins: [
     new EnvironmentPlugin({
-      API_URL: 'http://fordevs.herokuapp.com/api'
+      API_URL: 'https://fordevs.herokuapp.com/api'
     }),
     new HtmlWebpackPlugin({
       template: './template.prod.html'

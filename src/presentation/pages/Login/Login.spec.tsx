@@ -1,5 +1,5 @@
 import React from 'react'
-import { Router } from 'react-router'
+import { Router } from 'react-router-dom'
 import { Login } from '@/presentation/pages'
 import { ValidationStub, Helper } from '@/presentation/test'
 import { render, fireEvent, waitFor, screen } from '@testing-library/react'
