@@ -30,7 +30,7 @@ export const SurveyResult: React.FC = () => {
           </li>
         </FlipMove>
         <button>Voltar</button>
-        {true && <Loading />}
+        {false && <Loading />}
       </div>
       <Footer />
     </div>
