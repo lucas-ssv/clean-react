@@ -1,5 +1,6 @@
 export { MakeLogin } from './Login/login-factory'
-export {} from './Login/login-validation-factory'
+export { makeLoginValidation } from './Login/login-validation-factory'
 export { MakeSignUp } from './SignUp/signup-factory'
-export {} from './SignUp/signup-validation-factory'
+export { makeSignUpValidation } from './SignUp/signup-validation-factory'
 export { MakeSurveyList } from './SurveyList/survey-list-factory'
+export { MakeSurveyResult } from './SurveyResult/survey-result-factory'
