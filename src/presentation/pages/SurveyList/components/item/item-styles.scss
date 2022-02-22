@@ -45,15 +45,20 @@
 
   footer {
     background: var(--primary);
-    color: var(--white);
     border-radius: 0 0 0.5rem 0.5rem;
-    line-height: 2.5rem;
-    text-transform: lowercase;
-    text-align: center;
     cursor: pointer;
 
     &:hover {
       background: var(--primary-dark);
+    }
+
+    a {
+      color: var(--white);
+      line-height: 2.5rem;
+      text-transform: lowercase;
+      text-align: center;
+      display: block;
+      text-decoration: none;
     }
   }
 }
