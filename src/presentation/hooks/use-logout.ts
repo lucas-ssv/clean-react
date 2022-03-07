@@ -1,12 +1,12 @@
-import { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { ApiContext } from '../contexts/Api/api-context'
+import { useRecoilValue } from 'recoil'
+import { currentAccountState } from '../components'
 
 type ResultType = () => void
 
 export const useLogout = (): ResultType => {
   const history = useNavigate()
-  const { setCurrentAccount } = useContext(ApiContext)
+  const { setCurrentAccount } = useRecoilValue(currentAccountState)
   return (): void => {
     setCurrentAccount(undefined)
     history('/login', { replace: true })

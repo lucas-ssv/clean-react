@@ -1,12 +1,13 @@
 import { Logo } from '..'
 import Styles from './header-styles.scss'
-import React, { FormEvent, memo, useContext } from 'react'
-import { ApiContext } from '@/presentation/contexts/Api/api-context'
+import React, { FormEvent, memo } from 'react'
 import { useLogout } from '@/presentation/hooks'
+import { useRecoilValue } from 'recoil'
+import { currentAccountState } from '../atoms/atoms'
 
 const HeaderComponent: React.FC = () => {
   const logout = useLogout()
-  const { getCurrentAccount } = useContext(ApiContext)
+  const { getCurrentAccount } = useRecoilValue(currentAccountState)
   const buttonClick = (event: FormEvent): void => {
     event.preventDefault()
     logout()
