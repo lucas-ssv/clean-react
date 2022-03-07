@@ -5,7 +5,7 @@ import Styles from './signup-styles.scss'
 import { Validation } from '@/presentation/protocols/validation'
 import { AddAccount } from '@/domain/usecases'
 import { FormStatus, Input, signUpState, SubmitButton } from './components'
-import { useRecoilState, useRecoilValue } from 'recoil'
+import { useRecoilState, useRecoilValue, useResetRecoilState } from 'recoil'
 
 type Props = {
   validation: Validation
@@ -13,9 +13,12 @@ type Props = {
 }
 
 export const SignUp: React.FC<Props> = ({ validation, addAccount }: Props) => {
+  const resetSignUpState = useResetRecoilState(signUpState)
   const { setCurrentAccount } = useRecoilValue(currentAccountState)
   const history = useNavigate()
   const [state, setState] = useRecoilState(signUpState)
+
+  useEffect(() => resetSignUpState(), [])
 
   useEffect(() => {
     const { name, email, password, passwordConfirmation } = state
