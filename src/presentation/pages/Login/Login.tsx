@@ -5,7 +5,7 @@ import { currentAccountState, Footer, LoginHeader } from '@/presentation/compone
 import Styles from './login-styles.scss'
 import { Validation } from '@/presentation/protocols/validation'
 import { Authentication } from '@/domain/usecases'
-import { useRecoilState, useRecoilValue } from 'recoil'
+import { useRecoilState, useRecoilValue, useResetRecoilState } from 'recoil'
 
 type Props = {
   validation: Validation
@@ -13,9 +13,12 @@ type Props = {
 }
 
 export const Login: React.FC<Props> = ({ validation, authentication }: Props) => {
+  const resetLoginState = useResetRecoilState(loginState)
   const { setCurrentAccount } = useRecoilValue(currentAccountState)
   const history = useNavigate()
   const [state, setState] = useRecoilState(loginState)
+
+  useEffect(() => resetLoginState(), [])
 
   useEffect(() => {
     const { email, password } = state
