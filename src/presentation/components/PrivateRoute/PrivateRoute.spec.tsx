@@ -6,6 +6,7 @@ import { ApiContext } from '@/presentation/contexts/Api/api-context'
 import { mockAccountModel } from '@/domain/test'
 import { SurveyList } from '@/presentation/pages'
 import { PrivateRoute } from '..'
+import { RecoilRoot } from 'recoil'
 
 type SutTypes = {
   history: MemoryHistory
@@ -14,13 +15,15 @@ type SutTypes = {
 const makeSut = (account = mockAccountModel()): SutTypes => {
   const history = createMemoryHistory({ initialEntries: ['/'] })
   render(
-    <ApiContext.Provider value={{ getCurrentAccount: () => account }}>
-      <Router navigator={history} navigationType={history.action} location={history.location}>
-        <PrivateRoute>
-          <SurveyList />
-        </PrivateRoute>
-      </Router>
-    </ApiContext.Provider>
+    <RecoilRoot>
+      <ApiContext.Provider value={{ getCurrentAccount: () => account }}>
+        <Router navigator={history} navigationType={history.action} location={history.location}>
+          <PrivateRoute>
+            <SurveyList />
+          </PrivateRoute>
+        </Router>
+      </ApiContext.Provider>
+    </RecoilRoot>
   )
   return {
     history
