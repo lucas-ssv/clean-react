@@ -21,6 +21,7 @@
     "@typescript-eslint/no-unnecessary-type-assertion": "off",
     "@typescript-eslint/no-floating-promises": "off",
     "@typescript-eslint/no-namespace": "off",
+    "@typescript-eslint/no-misused-promises": "off",
     "import/export": "off",
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error"
